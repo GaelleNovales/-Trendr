@@ -1,0 +1,7 @@
+Analyses possibles : 
+Nb twets positifs / négatifs.
+Valence émotionnelle moyenne.
+(Le tout selon le temps)
+Nombre moyen de likes/retweets selon la valence émotionnelle du tweet.
+Hashtags le plus associés.
+Mots clés les plus fréquents.
