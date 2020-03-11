@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages of #TRENDR
+## Objectifs du projet Trendr
 
-You can use the [editor on GitHub](https://github.com/GaelleNovales/-Trendr/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Ce projet a pour objectif de mettre à disposition une application web permettant à l'utilisateur de renseigner un Hashtag de son choix et lui retourner une analyse de la valence émotionnelle des tweets contenant ce hashtag. 
+Cette analyse pourra présenter la distribution de tweets positifs et négatifs dans le temps, l'impact de la polarité émotionnelle sur la popularité du tweet (nombre moyen de likes et retweets selon que le tweet soit positif ou négatif), ou encore les hashtags et mots clés les plus fréquemment associés (toujours selon la polarité émotionnelle des tweets).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Dans un premier temps, nous souhaitons proposer ces services pour un nombre limité de hashtags choisis par le groupe. Si le temps et les ressources à notre disposition le permettent, nous ouvrirons ce service à n'importe quel hashtag choisi par l'utilisateur.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GaelleNovales/-Trendr/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+L'intérêt de ce projet réside dans le travail de traitement et de normalisation des tweets nécessaires à l'analyse, ainsi que du caractère inédit de ce type de rapport.
+Cette application cible par exemple un journaliste intéressé par une analyse détaillée de l'opinion générale sur un sujet.
