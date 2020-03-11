@@ -7,3 +7,6 @@ Dans un premier temps, nous souhaitons proposer ces services pour un nombre limi
 
 L'intérêt de ce projet réside dans le travail de traitement et de normalisation des tweets nécessaires à l'analyse, ainsi que du caractère inédit de ce type de rapport.
 Cette application cible par exemple un journaliste intéressé par une analyse détaillée de l'opinion générale sur un sujet.
+
+_Exemple :_
+![Image](Exemple.PNG)
