@@ -1,0 +1,36 @@
+* {
+    background-color: #C1D1DB;
+}
+
+.btn-info {
+    margin: 10px;
+    background: #A2C2D6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    border: 0;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #1E3B6D;
+    border: 1px solid rgb(129, 165, 187);
+}
+
+.btn-info:hover {
+    background: rgb(93, 129, 151);
+    color: white;
+    border: 1px solid #1E3B6D;
+}
+
+.buttons {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+}
+
+.all {
+    width: 500px;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
