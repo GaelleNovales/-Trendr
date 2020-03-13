@@ -16,6 +16,7 @@ img {
     max-width: 100%;
 }
 
+
 /* Navbar */
 
 .navbar {
@@ -58,23 +59,24 @@ img {
 }
 
 #primaire {
-    border: 1px solid rgb(206, 206, 206);
+    border: 1px solid rgba(158, 197, 221, 0.30);
     border-radius: 15px;
     transition: background-color 0.5s;
+    box-shadow: 5px 5px 30px rgba(158, 197, 221, 0.20);
 }
 
 #primaire:hover {
     border: 1px solid #C1D1DB;
-    background-color: rgba(193, 209, 219, 0.15);
+    background-color: rgba(134, 193, 230, 0.15);
 }
 
 .logos {
-    max-height: 20px; 
+    max-height: 20px;
     margin-top: 20px;
 }
 
 .logos img:nth-child(2) {
-    margin-left: 35% ;
+    margin-left: 35%;
 }
 
 #retweets {
@@ -104,6 +106,7 @@ img {
     width: 100% !important;
 }
 
+
 /* Footer  */
 
 .footer-nav {
@@ -119,7 +122,7 @@ img {
     height: 40px;
     background-color: rgb(250, 250, 250) !important;
     opacity: 0%;
-	transition: .2s ease-in;
+    transition: .2s ease-in;
 }
 
 .footer-nav:hover {
