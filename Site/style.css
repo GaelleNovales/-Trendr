@@ -1,5 +1,5 @@
 body {
-    background: #F4F4F4;
+    background: rgb(250, 250, 250);
 }
 
 a {
@@ -10,6 +10,10 @@ a {
 a:hover {
     text-decoration: none;
     color: #5f5f5f;
+}
+
+img {
+    max-width: 100%;
 }
 
 /* Navbar */
@@ -57,28 +61,44 @@ a:hover {
 
 #primaire {
     border: 1px solid rgb(206, 206, 206);
-    border-radius: 20px;
+    border-radius: 15px;
     transition: background-color 0.5s;
 }
 
 #primaire:hover {
-    background-color: rgb(239, 239, 239);
+    border: 1px solid #C1D1DB;
+    background-color: rgba(193, 209, 219, 0.15);
 }
 
 .logos {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-
-.logos img {
-    max-height: 30px; 
+    max-height: 20px; 
     margin-top: 20px;
 }
 
 .logos img:nth-child(2) {
     margin-left: 35% ;
+}
+
+#retweets {
+    border: 1px solid rgb(47, 175, 132);
+    border-radius: 15px;
+    transition: background-color 0.5s;
+    padding: 10px;
+}
+
+#retweets:hover {
+    background-color: rgba(47, 175, 132, 0.15);
+}
+
+#likes {
+    border: 1px solid rgb(175, 47, 132);
+    border-radius: 15px;
+    transition: background-color 0.5s;
+    padding: 10px;
+}
+
+#likes:hover {
+    background-color: rgba(175, 47, 132, 0.15);
 }
 
 /* Footer  */
@@ -94,8 +114,15 @@ a:hover {
     padding-top: 7px;
     text-align: center;
     height: 40px;
-    background-color: #F4F4F4 !important;
-    visibility: hidden;
+    background-color: rgb(250, 250, 250) !important;
+    opacity: 0%;
+	transition: .2s ease-in;
+}
+
+.footer-nav:hover {
+    padding-top: 10px;
+    height: 50px;
+    opacity: 100%;
 }
 
 .footer-nav p {
@@ -112,5 +139,5 @@ a:hover {
 }
 
 .show {
-    visibility: visible !important;
+    opacity: 100%;
 }

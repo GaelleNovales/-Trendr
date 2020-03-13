@@ -25,12 +25,31 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .all {
-    width: 500px;
+    width: 60%;
     margin: auto;
     margin-top: 5%;
     text-align: center;
+}
+
+img {
+	margin-top: 0px;
+	margin-bottom: 30px;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img:hover {
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+h4 {
+    margin-bottom: 30px;
+}
+
+.descr {
+    text-align: justify;
 }
