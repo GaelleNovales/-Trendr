@@ -68,6 +68,7 @@ h4 {
     padding-top: 20px;
     margin-top: 13px;
     transition: 0.2s ease-in;
+    overflow: hidden;
 }
 
 .contact:hover {
@@ -80,6 +81,7 @@ h4 {
     margin-top: 0;
     margin-bottom: 15px;
     background: rgba(116, 145, 150, 0);
+    overflow: hidden;
 }
 
 .contact h6 {
