@@ -7,6 +7,38 @@
     <link rel="icon" type="image/png" href="images/Logo1petit.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+	
+	<script>
+	
+		var requestURL = 'DATA/json1.json';
+		var request = new XMLHttpRequest();
+		request.open('GET', requestURL);
+		request.responseType = 'json';
+		request.send();
+		request.onload = function() {
+			var data = request.response;
+			var listeNbPositif=data['pepsi'][0]['nbPositif'];
+			var listeNbNegatif=data['pepsi'][0]['nbNegatif'];
+			/*
+			on parcour tous les valeurs positives et negatives. 
+			on recupere toutes les valeus pour le graphique une pas une et la moyenne pour chaque niveau. 
+			*/
+			var moyenne= [];
+			for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+				//console.log(listeNbNegatif[i]);
+				//console.log(listeNbPositif[i]);
+				var moytemp=(listeNbPositif[i]+listeNbNegatif[i])/2;
+				moyenne.push(moytemp);
+				
+			}
+			console.log(moyenne);
+		}
+	
+	
+	
+	</script>
+	
+	
 </head>
 
 <body>
