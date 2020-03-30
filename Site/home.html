@@ -42,7 +42,16 @@
         <div class="row" id="primaire">
             <div class="col">
                 <h6>Polarité des tweets globaux</h6>
-                <img src="dataexemples/home.PNG">
+                <!--<img src="dataexemples/home.PNG">-->
+				<figure class="highcharts-figure">
+				<div id="containerAccueil1"></div>
+				<p class="highcharts-description">
+					Variable radius pie charts can be used to visualize a
+					second dimension in a pie chart. In this chart, the more
+					populated countries are drawn further out, while the
+					slice width is determined by the size of the country.
+				</p>
+				</figure>
                 <p style="font-style: oblique">
                     <br />
                     Ajouter légende<br />
@@ -66,6 +75,48 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</body>
+
+	
+	<!-- graphique -->
+	
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+Highcharts.chart('containerAccueil1', {
+    chart: {
+        type: 'variablepie'
+    },
+    title: {
+        text: ''
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'tweet positif/negatif: <b>{point.y}</b><br/>'
+    },
+    series: [{
+        minPointSize: 20,
+        innerSize: '40%',
+        zMin: 0,
+        name: 'marque',
+        data: [{
+            name: 'positif',
+            y: 30
+        },{
+            name: 'negatif',
+            y: 40
+        }]
+    }]
+});
+
+</script>
+	
+	
+	
+	</body>
 
 </html>
