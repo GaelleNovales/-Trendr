@@ -447,7 +447,12 @@ Highcharts.chart('container7', {
         floating: true,
     },
     xAxis: {
-        categories:  codeEmoji
+        categories: codeEmoji,
+        labels: {
+            style: {
+                fontSize: "25px"
+            }
+        }
     },
     credits: {
         enabled: false
