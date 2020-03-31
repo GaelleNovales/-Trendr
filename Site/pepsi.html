@@ -451,15 +451,20 @@ Highcharts.chart('container7', {
         text: '',
         floating: true,
     },
-    xAxis: {
-        categories:  codeEmoji
-    },
     credits: {
         enabled: false
     },
 	yAxis: {
 		title:{text:'Occurences'}
     },	
+    xAxis: {
+        categories: codeEmoji,
+        labels: {
+            style: {
+                fontSize: "25px"
+            }
+        }
+    },
     exporting : {
         buttons: {
             contextButton: {
