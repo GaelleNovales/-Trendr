@@ -21,7 +21,7 @@
                   <a class="nav-link active" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
               </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="pepsi.html"><strong>Pepsi</strong><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="coca.html">Coca-Cola</a>
@@ -41,14 +41,19 @@
     <div class="container">
         <div class="row" id="primaire">
             <div class="col">
-                <h6>Polarité des tweets globaux</h6>
-                <img src="dataexemples/home.PNG">
-                <p style="font-style: oblique">
+                <h6>Overview</h6>
+                <!--<img src="dataexemples/home.PNG">-->
+				<figure class="highcharts-figure">
+				<div id="containerAccueil1"></div>
+				<div id="containerAccueil2"></div>
+				<div id="containerAccueil3"></div>
+				<div id="containerAccueil4"></div>
+				</figure>
+                <div style="font-style: oblique; margin-top:30%; margin-bottom:3%;">
+                    <br/>
                     <br />
-                    Ajouter légende<br />
-                    Au survol sur un élément du graph : détails.<br />
-                    Au cilc sur un logo : renvoi vers la page correspondante
-                </p>
+                    Popularité globale des marques monitorées. 
+                </div>
             </div>
         </div>
     </div>
@@ -66,6 +71,272 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</body>
+
+	
+	<!-- graphique -->
+	
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+
+var requestURL = 'DATA/json1.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+	var data = request.response;
+	
+	
+	var listeNbNegatif=data['pepsi'][0]['nbNegatif'];
+	var totalPositif=0;
+	var totalNegatif=0;
+	for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+		var nbTempP=data['pepsi'][0]['nbPositif'][i];
+		totalPositif=nbTempP+totalPositif;
+		var nbTempN=data['pepsi'][0]['nbNegatif'][i];
+		totalNegatif=nbTempN+totalNegatif;
+	}
+	var totalPepsi=totalPositif+totalNegatif;
+	var pepsiPartP=(totalPositif/totalPepsi)*100;
+	var pepsiPartN=(totalNegatif/totalPepsi)*100;
+	
+/////////////////////////////////////////////////////////////graphique 1 : PEPSI /////////////////////////////////////////////////////////////	
+
+Highcharts.chart('containerAccueil1', {
+    chart: {
+        type: 'variablepie',
+        backgroundColor: 'none',
+        height: 300,
+    },
+    colors: ['#7ced6a', '#ea7272'],
+    title: {
+        useHTML: true,
+        text: '<strong><a href="pepsi.html"><img src="images/pepsi.png" class="icontitres" />Pepsi</a></strong>'
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'Tweets {point.name} : <b>{point.y}%</b><br/>'
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        minPointSize: 20,
+        innerSize: '40%',
+        zMin: 0,
+        name: 'marque',
+        data: [{
+            name: 'Positifs',
+            y: Math.round(pepsiPartP)
+        },{
+            name: 'Negatifs',
+            y: Math.round(pepsiPartN)
+        }]
+    }]
+
+});
+/////////////////////////////////////////////////////////////////////ORANGINA////////////////////////////////////////////////////////////////////////////
+
+	
+	var listeNbNegatif=data['orangina'][0]['nbNegatif'];
+	var totalPositif=0;
+	var totalNegatif=0;
+	for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+		var nbTempP=data['orangina'][0]['nbPositif'][i];
+		totalPositif=nbTempP+totalPositif;
+		var nbTempN=data['orangina'][0]['nbNegatif'][i];
+		totalNegatif=nbTempN+totalNegatif;
+	}
+	var totalorangina=totalPositif+totalNegatif;
+	var oranginaPartP=(totalPositif/totalorangina)*100;
+	var oranginaPartN=(totalNegatif/totalorangina)*100;
+	
+/////////////////////////////////////////////////////////////graphique 2 : orangina /////////////////////////////////////////////////////////////	
+
+Highcharts.chart('containerAccueil2', {
+    chart: {
+        type: 'variablepie',
+        backgroundColor: 'none',
+        height: 300,
+    },
+    colors: ['#7ced6a', '#ea7272'],
+    title: {
+        useHTML: true,
+        text: '<strong><a href="orangina.html"><img src="images/orangina.jpg" class="icontitres" />Orangina</a></strong>'
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'Tweets {point.name} : <b>{point.y}%</b><br/>'
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        minPointSize: 20,
+        innerSize: '40%',
+        zMin: 0,
+        name: 'marque',
+        data: [{
+            name: 'Positifs',
+            y: Math.round(oranginaPartP)
+        },{
+            name: 'Negatifs',
+            y: Math.round(oranginaPartN)
+        }]
+    }]
+
+});
+
+/////////////////////////////////////////////////////////////////////COCA////////////////////////////////////////////////////////////////////////////
+
+	
+	var listeNbNegatif=data['coca'][0]['nbNegatif'];
+	var totalPositif=0;
+	var totalNegatif=0;
+	for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+		var nbTempP=data['coca'][0]['nbPositif'][i];
+		totalPositif=nbTempP+totalPositif;
+		var nbTempN=data['coca'][0]['nbNegatif'][i];
+		totalNegatif=nbTempN+totalNegatif;
+	}
+	var totalcoca=totalPositif+totalNegatif;
+	var cocaPartP=(totalPositif/totalcoca)*100;
+	var cocaPartN=(totalNegatif/totalcoca)*100;
+	
+/////////////////////////////////////////////////////////////graphique 3 : coca /////////////////////////////////////////////////////////////	
+
+Highcharts.chart('containerAccueil3', {
+    chart: {
+        type: 'variablepie',
+        backgroundColor: 'none',
+        height: 300,
+    },
+    colors: ['#7ced6a', '#ea7272'],
+    title: {
+        useHTML: true,
+        text: '<strong><a href="coca.html"><img src="images/coca.jpg" class="icontitres" />Coca-Cola</a></strong>'
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'Tweets {point.name} : <b>{point.y}%</b><br/>'
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        minPointSize: 20,
+        innerSize: '40%',
+        zMin: 0,
+        name: 'marque',
+        data: [{
+            name: 'Positifs',
+            y: Math.round(cocaPartP)
+        },{
+            name: 'Negatifs',
+            y: Math.round(cocaPartN)
+        }]
+    }]
+
+});
+
+/////////////////////////////////////////////////////////////////////fanta////////////////////////////////////////////////////////////////////////////
+
+	
+	var listeNbNegatif=data['fanta'][0]['nbNegatif'];
+	var totalPositif=0;
+	var totalNegatif=0;
+	for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+		var nbTempP=data['fanta'][0]['nbPositif'][i];
+		totalPositif=nbTempP+totalPositif;
+		var nbTempN=data['fanta'][0]['nbNegatif'][i];
+		totalNegatif=nbTempN+totalNegatif;
+	}
+	var totalfanta=totalPositif+totalNegatif;
+	var fantaPartP=(totalPositif/totalfanta)*100;
+	var fantaPartN=(totalNegatif/totalfanta)*100;
+	
+/////////////////////////////////////////////////////////////graphique 4 : fanta /////////////////////////////////////////////////////////////	
+
+Highcharts.chart('containerAccueil4', {
+    chart: {
+        type: 'variablepie',
+        backgroundColor: 'none',
+        height: 300,
+    },
+    colors: ['#7ced6a', '#ea7272'],
+    title: {
+        useHTML: true,
+        text: '<strong><a href="fanta.html"><img src="images/fanta.svg" class="icontitres" />Fanta</a></strong>'
+    },
+    tooltip: {
+        headerFormat: '',
+        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+            'Tweets {point.name} : <b>{point.y}%</b><br/>'
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        minPointSize: 20,
+        innerSize: '40%',
+        zMin: 0,
+        name: 'marque',
+        data: [{
+            name: 'Positifs',
+            y: Math.round(fantaPartP)
+        },{
+            name: 'Negatifs',
+            y: Math.round(fantaPartN)
+        }]
+    }]
+
+});
+
+
+
+
+}
+
+</script>
+	
+	
+	
+	</body>
 
 </html>

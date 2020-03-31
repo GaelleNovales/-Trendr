@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Trendr - Pepsi</title>
+    <title>Trendr - Coca-cola</title>
     <link rel="icon" type="image/png" href="images/Logo1petit.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -25,10 +25,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a id="pepsi" class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a id="coca" class="nav-link" href="coca.html">Coca-Cola</a>
                 </li>
                 <li class="nav-item">
@@ -171,8 +171,8 @@
 	request.send();
 	request.onload = function() {
 		var data = request.response;
-		var listeNbPositif=data['pepsi'][0]['nbPositif'];
-		var listeNbNegatif=data['pepsi'][0]['nbNegatif'];
+		var listeNbPositif=data['coca'][0]['nbPositif'];
+		var listeNbNegatif=data['coca'][0]['nbNegatif'];
 		/*
 		on parcour tous les valeurs positives et negatives. 
 		on recupere toutes les valeus pour le graphique une pas une et la moyenne pour chaque niveau. 
@@ -188,10 +188,7 @@
 			listeNbNegatifSigne.push(negtemp);
 				
 		}
-		//console.log(moyenne);
-		//console.log(data['pepsi'][0]['date']);
-	
-
+		
 //////////////////////////////////////////////////////////graphique 1/////////////////////////////////////////////////////////////
 
 Highcharts.chart('container', {
@@ -204,7 +201,7 @@ Highcharts.chart('container', {
         text: ''
     },
     xAxis: {
-        categories: data['pepsi'][0]['date'],//ici mes dates en abscise
+        categories: data['coca'][0]['date'],//ici mes dates en abscise
 		title:{text:'Date'}
     },
 	yAxis: {
@@ -233,8 +230,6 @@ Highcharts.chart('container', {
 
 //////////////////////////////////////////////////////////graphique 2/////////////////////////////////////////////////////////////
 
-	//console.log(data['pepsi'][0]['hastagAssocie']);
-	
 Highcharts.chart('container2', {
     accessibility: {
         screenReaderSection: {
@@ -246,7 +241,7 @@ Highcharts.chart('container2', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['hastagAssocie'],
+        data: data['coca'][0]['hastagAssocie'],
         name: 'Occurrences'
     }],
     title: {
@@ -286,7 +281,7 @@ Highcharts.chart('container3', {
         '#6ace5a', '#4ae033', '#25d30a', '#36c982', '#78ba87'],
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['nameClefPos'],
+        data: data['coca'][0]['nameClefPos'],
         name: 'Occurrences'
     }],
     title: {
@@ -323,7 +318,7 @@ Highcharts.chart('container4', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['nameClefNeg'],
+        data: data['coca'][0]['nameClefNeg'],
         name: 'Occurrences'
     }],
     title: {
@@ -360,12 +355,12 @@ Highcharts.chart('container5', {
     title: {
         text: ''
     },
-	yAxis: {
-		title:{text:'Nb de likes'}
-    },	
     xAxis: {
        visible: false,
     },
+	yAxis: {
+		title:{text:'Nb de likes'}
+    },	
     credits: {
         enabled: false
     },
@@ -378,11 +373,11 @@ Highcharts.chart('container5', {
     },
     series: [{
         name: 'Tweets positifs',
-        data: [data['pepsi'][0]['nbLikePos']],
+        data: [data['coca'][0]['nbLikePos']],
 		color: 'rgba(110,178,0,1)'
     }, {
         name: 'Tweets négatifs',
-        data: [data['pepsi'][0]['nbLikeNeg']],
+        data: [data['coca'][0]['nbLikeNeg']],
 		color: 'rgba(214,74,0,1)'
     }]
 });
@@ -393,7 +388,7 @@ Highcharts.chart('container6', {
     chart: {
         type: 'column',
         backgroundColor: 'none',
-        height: 250
+        height: 250,
     },
     title: {
         text: ''
@@ -416,11 +411,11 @@ Highcharts.chart('container6', {
     },
     series: [{
         name: 'Tweets positifs',
-        data: [data['pepsi'][0]['nbRetweetPos']],
+        data: [data['coca'][0]['nbRetweetPos']],
 		color: 'rgba(110,178,0,1)'
     }, {
         name: 'Tweets négatifs',
-        data: [data['pepsi'][0]['nbRetweetNeg']],
+        data: [data['coca'][0]['nbRetweetNeg']],
 		color: 'rgba(214,74,0,1)'
     }]
 });
@@ -432,11 +427,11 @@ Highcharts.chart('container6', {
 //faire une liste des code et une liste des resultats. 
 var codeEmoji= [];
 var occurenceEmoji= [];
-var listeEmoji=data['pepsi'][0]['emojis'];
+var listeEmoji=data['coca'][0]['emojis'];
 for (var i in listeEmoji){ 
-	//console.log(data['pepsi'][0]['emojis'][i]['code']);
-	codeEmoji.push(data['pepsi'][0]['emojis'][i]['code']);
-	occurenceEmoji.push(data['pepsi'][0]['emojis'][i]['occurence']);	
+	//console.log(data['coca'][0]['emojis'][i]['code']);
+	codeEmoji.push(data['coca'][0]['emojis'][i]['code']);
+	occurenceEmoji.push(data['coca'][0]['emojis'][i]['occurence']);	
 }
 		//console.log(listeEmoji);
 
