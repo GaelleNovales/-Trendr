@@ -356,7 +356,7 @@ Highcharts.chart('container5', {
         text: ''
     },
 	xAxis: {
-        categories: ['7 dernier jours']//ici mes dates en abscise
+        categories: ['']//ici mes dates en abscise
     },
 	yAxis: {
 		title:{text:'Nb de likes'}
@@ -394,7 +394,7 @@ Highcharts.chart('container6', {
         text: ''
     },
     xAxis: {
-        categories: ['7 dernier jours']//ici mes dates en abscise
+        categories: ['']//ici mes dates en abscise
     },
 	yAxis: {
 		title:{text:'Nb de retweets'}
@@ -437,8 +437,8 @@ for (var i in listeEmoji){
 */
 var i= 0;
 while(i<10){
-	codeEmoji.push(data['fanta'][0]['emojis'][i]['name']);
-	occurenceEmoji.push(data['fanta'][0]['emojis'][i]['weight']);
+	codeEmoji.push(data['coca'][0]['emojis'][i]['name']);
+	occurenceEmoji.push(data['coca'][0]['emojis'][i]['weight']);
 	i=i+1;
 }
 
