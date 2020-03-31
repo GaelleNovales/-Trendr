@@ -196,7 +196,9 @@
 
 Highcharts.chart('container', {
     chart: {
-        type: 'column'
+        type: 'column',
+        backgroundColor: 'none',
+        height: 300,
     },
     title: {
         text: ''
@@ -206,22 +208,22 @@ Highcharts.chart('container', {
 		title:{text:'Date'}
     },
 	yAxis: {
-		title:{text:'tweet'}
+		title:{text:'Nb de tweets'}
     },	
     credits: {
         enabled: false
     },
     series: [{
-        name: 'Tweet positif',
+        name: 'Tweets positifs',
         data: listeNbPositif,
 		color: 'rgba(110,178,0,1)'
     }, {
-        name: 'Tweet negatif',
+        name: 'Tweets negatifs',
         data: listeNbNegatifSigne,
 		color: 'rgba(214,74,0,1)'
     },
 	{
-        name: 'La popularité des tweets en moyenne',
+        name: 'Popularité des tweets en moyenne',
         type: 'spline',
 		color: 'rgba(10,3,0,1)',
         data: moyenne
@@ -249,6 +251,20 @@ Highcharts.chart('container2', {
     }],
     title: {
         text: ''
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 300,
+    },
+    credits: {
+        enabled: false
     }
 });
 
@@ -266,6 +282,8 @@ Highcharts.chart('container3', {
                 '<div>{viewTableButton}</div>'
         }
     },
+    colors: ['#21ba3a', '#44e55f', '#1aed3d', '#7ad689', '#0d9b25',
+        '#6ace5a', '#4ae033', '#25d30a', '#36c982', '#78ba87'],
     series: [{
         type: 'wordcloud',
         data: data['pepsi'][0]['nameClefPos'],
@@ -273,6 +291,20 @@ Highcharts.chart('container3', {
     }],
     title: {
         text: ''
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 250
+    },
+    credits: {
+        enabled: false
     }
 });
 
@@ -296,6 +328,22 @@ Highcharts.chart('container4', {
     }],
     title: {
         text: ''
+    },
+    colors: ['#e2583d', '#e83a17', '#ed765e', '#c16857', '#d13414',
+    '#e2583d', '#e83a17', '#ed765e', '#c16857', '#d13414'],
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 250
+    },
+    credits: {
+        enabled: false
     }
 });
 
@@ -305,7 +353,9 @@ Highcharts.chart('container4', {
 
 Highcharts.chart('container5', {
     chart: {
-        type: 'column'
+        type: 'column',
+        backgroundColor: 'none',
+        height: 250,
     },
     title: {
         text: ''
@@ -314,17 +364,24 @@ Highcharts.chart('container5', {
         categories: ['7 dernier jours']//ici mes dates en abscise
     },
 	yAxis: {
-		title:{text:'tweet'}
+		title:{text:'Nb de likes'}
     },	
     credits: {
         enabled: false
     },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
     series: [{
-        name: 'Tweet aimé',
+        name: 'Tweets positifs',
         data: [data['pepsi'][0]['nbLikePos']],
 		color: 'rgba(110,178,0,1)'
     }, {
-        name: 'Tweet pas aimé',
+        name: 'Tweets négatifs',
         data: [data['pepsi'][0]['nbLikeNeg']],
 		color: 'rgba(214,74,0,1)'
     }]
@@ -334,7 +391,9 @@ Highcharts.chart('container5', {
 
 Highcharts.chart('container6', {
     chart: {
-        type: 'column'
+        type: 'column',
+        backgroundColor: 'none',
+        height: 250,
     },
     title: {
         text: ''
@@ -343,17 +402,24 @@ Highcharts.chart('container6', {
         categories: ['7 dernier jours']//ici mes dates en abscise
     },
 	yAxis: {
-		title:{text:'tweet'}
+		title:{text:'Nb de retweets'}
     },	
     credits: {
         enabled: false
     },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
     series: [{
-        name: 'Tweet retweet',
+        name: 'Tweets positifs',
         data: [data['pepsi'][0]['nbRetweetPos']],
 		color: 'rgba(110,178,0,1)'
     }, {
-        name: 'Tweet pas retweet',
+        name: 'Tweets négatifs',
         data: [data['pepsi'][0]['nbRetweetNeg']],
 		color: 'rgba(214,74,0,1)'
     }]
@@ -377,10 +443,13 @@ for (var i in listeEmoji){
 
 Highcharts.chart('container7', {
     chart: {
-        type: 'column'
+        type: 'column',
+        backgroundColor: 'none',
+        height: 300
     },
     title: {
-        text: 'Emojis les plus populaires'
+        text: '',
+        floating: true,
     },
     xAxis: {
         categories:  codeEmoji
@@ -389,11 +458,19 @@ Highcharts.chart('container7', {
         enabled: false
     },
 	yAxis: {
-		title:{text:'recurence dans les tweets'}
+		title:{text:'Occurences'}
     },	
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
     series: [{
-        name: 'emoji dans les tweets',
-        data: occurenceEmoji
+        name: "Nb d'occurences",
+        data: occurenceEmoji,
+        dataSorting: {enabled: true}
     }]
 });
 
