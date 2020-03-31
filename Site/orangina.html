@@ -25,7 +25,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a id="pepsi" class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -34,8 +34,8 @@
                 <li class="nav-item">
                     <a id="fanta" class="nav-link" href="fanta.html">Fanta</a>
                 </li>
-                <li class="nav-item active">
-                    <a id="orangina" class="nav-link" href="orangina.html">Orangina</a>
+                <li class="nav-item">
+                    <a id="orangina" class="nav-link" href="orangina.html"><strong>Orangina</strong></a>
                 </li>
             </ul>
         </div>
@@ -164,7 +164,7 @@
 	<script>
 	
 	
-	var requestURL = 'DATA/json1.json';
+	var requestURL = 'DATA/data_5.json';
 	var request = new XMLHttpRequest();
 	request.open('GET', requestURL);
 	request.responseType = 'json';
@@ -241,7 +241,7 @@ Highcharts.chart('container2', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['orangina'][0]['hastagAssocie'],
+        data: data['orangina'][0]['hashtagAssocie'],
         name: 'Occurrences'
     }],
     title: {
@@ -281,7 +281,7 @@ Highcharts.chart('container3', {
         '#6ace5a', '#4ae033', '#25d30a', '#36c982', '#78ba87'],
     series: [{
         type: 'wordcloud',
-        data: data['orangina'][0]['nameClefPos'],
+        data: data['orangina'][0]['motClefPos'],
         name: 'Occurrences'
     }],
     title: {
@@ -318,7 +318,7 @@ Highcharts.chart('container4', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['orangina'][0]['nameClefNeg'],
+        data: data['orangina'][0]['motClefNeg'],
         name: 'Occurrences'
     }],
     title: {
@@ -355,8 +355,8 @@ Highcharts.chart('container5', {
     title: {
         text: ''
     },
-    xAxis: {
-       visible: false,
+	xAxis: {
+        categories: ['7 dernier jours']//ici mes dates en abscise
     },
 	yAxis: {
 		title:{text:'Nb de likes'}
@@ -394,7 +394,7 @@ Highcharts.chart('container6', {
         text: ''
     },
     xAxis: {
-       visible: false,
+        categories: ['7 dernier jours']//ici mes dates en abscise
     },
 	yAxis: {
 		title:{text:'Nb de retweets'}
@@ -428,10 +428,16 @@ Highcharts.chart('container6', {
 var codeEmoji= [];
 var occurenceEmoji= [];
 var listeEmoji=data['orangina'][0]['emojis'];
-for (var i in listeEmoji){ 
+/*for (var i in listeEmoji){ 
 	//console.log(data['orangina'][0]['emojis'][i]['code']);
 	codeEmoji.push(data['orangina'][0]['emojis'][i]['code']);
 	occurenceEmoji.push(data['orangina'][0]['emojis'][i]['occurence']);	
+}*/
+var i= 0;
+while(i<10){
+	codeEmoji.push(data['fanta'][0]['emojis'][i]['name']);
+	occurenceEmoji.push(data['fanta'][0]['emojis'][i]['weight']);
+	i=i+1;
 }
 		//console.log(listeEmoji);
 
@@ -447,12 +453,7 @@ Highcharts.chart('container7', {
         floating: true,
     },
     xAxis: {
-        categories: codeEmoji,
-        labels: {
-            style: {
-                fontSize: "25px"
-            }
-        }
+        categories:  codeEmoji
     },
     credits: {
         enabled: false
