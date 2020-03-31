@@ -16,6 +16,13 @@ img {
     max-width: 100%;
 }
 
+.icontitres {
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: -8px;
+    box-shadow: 1px 1px 2px grey;
+}
 
 /* Navbar */
 
@@ -30,6 +37,10 @@ img {
 
 .nav-item {
     margin-left: 20px;
+}
+
+.active {
+    font-weight: bold;
 }
 
 
@@ -72,7 +83,7 @@ img {
 
 .logos {
     max-height: 20px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .logos img:nth-child(2) {

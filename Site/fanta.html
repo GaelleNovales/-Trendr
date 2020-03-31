@@ -25,13 +25,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a id="pepsi" class="nav-link" href="pepsi.html"><strong>Pepsi</strong><span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a id="pepsi" class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a id="coca" class="nav-link" href="coca.html">Coca-Cola</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a id="fanta" class="nav-link" href="fanta.html">Fanta</a>
                 </li>
                 <li class="nav-item">
@@ -355,8 +355,8 @@ Highcharts.chart('container5', {
     title: {
         text: ''
     },
-	xAxis: {
-        categories: ['7 dernier jours']//ici mes dates en abscise
+    xAxis: {
+       visible: false,
     },
 	yAxis: {
 		title:{text:'Nb de likes'}
@@ -394,7 +394,7 @@ Highcharts.chart('container6', {
         text: ''
     },
     xAxis: {
-        categories: ['7 dernier jours']//ici mes dates en abscise
+       visible: false,
     },
 	yAxis: {
 		title:{text:'Nb de retweets'}

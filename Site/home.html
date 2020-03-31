@@ -21,7 +21,7 @@
                   <a class="nav-link active" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
               </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="pepsi.html"><strong>Pepsi</strong><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="coca.html">Coca-Cola</a>
@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row" id="primaire">
             <div class="col">
-                <h6>Polarité des tweets globaux</h6>
+                <h6>Overview</h6>
                 <!--<img src="dataexemples/home.PNG">-->
 				<figure class="highcharts-figure">
 				<div id="containerAccueil1"></div>
@@ -52,7 +52,7 @@
                 <div style="font-style: oblique; margin-top:30%; margin-bottom:3%;">
                     <br/>
                     <br />
-                    Popularité des marques Pepsi, Orangina, Coca, et Fanta sur tweeter. 
+                    Popularité globale des marques monitorées. 
                 </div>
             </div>
         </div>
@@ -115,7 +115,8 @@ Highcharts.chart('containerAccueil1', {
     },
     colors: ['#7ced6a', '#ea7272'],
     title: {
-        text: '<strong><a href="#">Pepsi</a></strong>'
+        useHTML: true,
+        text: '<strong><a href="pepsi.html"><img src="images/pepsi.png" class="icontitres" />Pepsi</a></strong>'
     },
     tooltip: {
         headerFormat: '',
@@ -128,6 +129,9 @@ Highcharts.chart('containerAccueil1', {
                 enabled: false,
             }
         }
+    },
+    credits: {
+        enabled: false
     },
     series: [{
         minPointSize: 20,
@@ -170,7 +174,8 @@ Highcharts.chart('containerAccueil2', {
     },
     colors: ['#7ced6a', '#ea7272'],
     title: {
-        text: '<strong><a href="#">Orangina</a></strong>'
+        useHTML: true,
+        text: '<strong><a href="orangina.html"><img src="images/orangina.jpg" class="icontitres" />Orangina</a></strong>'
     },
     tooltip: {
         headerFormat: '',
@@ -183,6 +188,9 @@ Highcharts.chart('containerAccueil2', {
                 enabled: false,
             }
         }
+    },
+    credits: {
+        enabled: false
     },
     series: [{
         minPointSize: 20,
@@ -226,7 +234,8 @@ Highcharts.chart('containerAccueil3', {
     },
     colors: ['#7ced6a', '#ea7272'],
     title: {
-        text: '<strong><a href="#">Coca</a></strong>'
+        useHTML: true,
+        text: '<strong><a href="coca.html"><img src="images/coca.jpg" class="icontitres" />Coca-Cola</a></strong>'
     },
     tooltip: {
         headerFormat: '',
@@ -239,6 +248,9 @@ Highcharts.chart('containerAccueil3', {
                 enabled: false,
             }
         }
+    },
+    credits: {
+        enabled: false
     },
     series: [{
         minPointSize: 20,
@@ -282,7 +294,8 @@ Highcharts.chart('containerAccueil4', {
     },
     colors: ['#7ced6a', '#ea7272'],
     title: {
-        text: '<strong><a href="#">Fanta</a></strong>'
+        useHTML: true,
+        text: '<strong><a href="fanta.html"><img src="images/fanta.svg" class="icontitres" />Fanta</a></strong>'
     },
     tooltip: {
         headerFormat: '',
@@ -295,6 +308,9 @@ Highcharts.chart('containerAccueil4', {
                 enabled: false,
             }
         }
+    },
+    credits: {
+        enabled: false
     },
     series: [{
         minPointSize: 20,
