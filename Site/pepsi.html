@@ -152,7 +152,7 @@
     </script>
 	
 	
-	<!--SOURCE des graphiques :  https://www.highcharts.com/demo/wordcloud -->
+	<!--SOURCE des graphiques et bibliotheque:  https://www.highcharts.com/demo/wordcloud -->
 	
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/pareto.js"></script>
@@ -221,7 +221,7 @@ Highcharts.chart('container', {
 		color: 'rgba(214,74,0,1)'
     },
 	{
-        name: 'Moyenne de qualité des tweets',
+        name: 'La popularité des tweets en moyenne',
         type: 'spline',
 		color: 'rgba(10,3,0,1)',
         data: moyenne
@@ -362,22 +362,38 @@ Highcharts.chart('container6', {
 
 //////////////////////////////////////////////////////////graphique 7/////////////////////////////////////////////////////////////
 
+//gestion des emoji:
+//faire une liste des code et une liste des resultats. 
+var codeEmoji= [];
+var occurenceEmoji= [];
+var listeEmoji=data['pepsi'][0]['emojis'];
+for (var i in listeEmoji){ 
+	//console.log(data['pepsi'][0]['emojis'][i]['code']);
+	codeEmoji.push(data['pepsi'][0]['emojis'][i]['code']);
+	occurenceEmoji.push(data['pepsi'][0]['emojis'][i]['occurence']);	
+}
+		//console.log(listeEmoji);
+
+
 Highcharts.chart('container7', {
     chart: {
         type: 'column'
     },
     title: {
-        text: 'no titre'
+        text: 'Emojis les plus populaires'
     },
     xAxis: {
-        categories: ['\ud83d\ude02', '\ud83d\ude2d', '\ud83d\ude21', '\ud83d\udc27', '\ud83e\udd23','\ud83d\udcaf']//a remplecer par le liste json. 
+        categories:  codeEmoji
     },
     credits: {
         enabled: false
     },
+	yAxis: {
+		title:{text:'recurence dans les tweets'}
+    },	
     series: [{
-        name: 'emoji',
-        data: [5, 3, 4, 7, 2]
+        name: 'emoji dans les tweets',
+        data: occurenceEmoji
     }]
 });
 
