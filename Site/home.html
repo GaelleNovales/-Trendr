@@ -88,15 +88,25 @@
 <script>
 Highcharts.chart('containerAccueil1', {
     chart: {
-        type: 'variablepie'
+        type: 'variablepie',
+        backgroundColor: 'none',
+        height: 300,
     },
+    colors: ['#7ced6a', '#ea7272'],
     title: {
-        text: ''
+        text: '<strong><a href="#">Pepsi</a></strong>'
     },
     tooltip: {
         headerFormat: '',
         pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-            'tweet positif/negatif: <b>{point.y}</b><br/>'
+            'Tweets {point.name} : <b>{point.y}</b><br/>'
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
     },
     series: [{
         minPointSize: 20,
@@ -104,13 +114,14 @@ Highcharts.chart('containerAccueil1', {
         zMin: 0,
         name: 'marque',
         data: [{
-            name: 'positif',
+            name: 'Positifs',
             y: 30
         },{
-            name: 'negatif',
+            name: 'Negatifs',
             y: 40
         }]
     }]
+
 });
 
 </script>
