@@ -26,7 +26,7 @@
                     <a class="nav-link" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a id="pepsi" class="nav-link" href="pepsi.html">Pepsi<span class="sr-only">(current)</span></a>
+                    <a id="pepsi" class="nav-link" href="pepsi.html"><strong>Pepsi</strong><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a id="coca" class="nav-link" href="coca.html">Coca-Cola</a>
@@ -164,7 +164,7 @@
 	<script>
 	
 	
-	var requestURL = 'DATA/json1.json';
+	var requestURL = 'DATA/data_5.json';
 	var request = new XMLHttpRequest();
 	request.open('GET', requestURL);
 	request.responseType = 'json';
@@ -246,7 +246,7 @@ Highcharts.chart('container2', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['hastagAssocie'],
+        data: data['pepsi'][0]['hashtagAssocie'],
         name: 'Occurrences'
     }],
     title: {
@@ -286,7 +286,7 @@ Highcharts.chart('container3', {
         '#6ace5a', '#4ae033', '#25d30a', '#36c982', '#78ba87'],
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['nameClefPos'],
+        data: data['pepsi'][0]['motClefPos'],
         name: 'Occurrences'
     }],
     title: {
@@ -323,7 +323,7 @@ Highcharts.chart('container4', {
     },
     series: [{
         type: 'wordcloud',
-        data: data['pepsi'][0]['nameClefNeg'],
+        data: data['pepsi'][0]['motClefPos'],
         name: 'Occurrences'
     }],
     title: {
@@ -360,12 +360,12 @@ Highcharts.chart('container5', {
     title: {
         text: ''
     },
+	xAxis: {
+        categories: ['7 dernier jours']//ici mes dates en abscise
+    },
 	yAxis: {
 		title:{text:'Nb de likes'}
     },	
-    xAxis: {
-       visible: false,
-    },
     credits: {
         enabled: false
     },
@@ -393,13 +393,13 @@ Highcharts.chart('container6', {
     chart: {
         type: 'column',
         backgroundColor: 'none',
-        height: 250
+        height: 250,
     },
     title: {
         text: ''
     },
     xAxis: {
-       visible: false,
+        categories: ['7 dernier jours']//ici mes dates en abscise
     },
 	yAxis: {
 		title:{text:'Nb de retweets'}
@@ -433,10 +433,16 @@ Highcharts.chart('container6', {
 var codeEmoji= [];
 var occurenceEmoji= [];
 var listeEmoji=data['pepsi'][0]['emojis'];
-for (var i in listeEmoji){ 
+/*for (var i in listeEmoji){ 
 	//console.log(data['pepsi'][0]['emojis'][i]['code']);
-	codeEmoji.push(data['pepsi'][0]['emojis'][i]['code']);
-	occurenceEmoji.push(data['pepsi'][0]['emojis'][i]['occurence']);	
+	codeEmoji.push(data['pepsi'][0]['emojis'][i]['name']);
+	occurenceEmoji.push(data['pepsi'][0]['emojis'][i]['weight']);	
+}*/
+var i= 0;
+while(i<10){
+	codeEmoji.push(data['fanta'][0]['emojis'][i]['name']);
+	occurenceEmoji.push(data['fanta'][0]['emojis'][i]['weight']);
+	i=i+1;
 }
 		//console.log(listeEmoji);
 
@@ -451,20 +457,15 @@ Highcharts.chart('container7', {
         text: '',
         floating: true,
     },
+    xAxis: {
+        categories:  codeEmoji
+    },
     credits: {
         enabled: false
     },
 	yAxis: {
 		title:{text:'Occurences'}
     },	
-    xAxis: {
-        categories: codeEmoji,
-        labels: {
-            style: {
-                fontSize: "25px"
-            }
-        }
-    },
     exporting : {
         buttons: {
             contextButton: {
