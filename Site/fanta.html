@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Trendr - Fanta</title>
+    <link rel="icon" type="image/png" href="images/Logo1petit.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+	
+	<script type="text/javascript" src="jquery-3.4.0.min.js"></script>
+	
+	
+	
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/Logo1petit.png" width="30" height="30" class="d-inline-block align-top" alt=""> Trendr
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a id="pepsi" class="nav-link" href="pepsi.html"><strong>Pepsi</strong><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a id="coca" class="nav-link" href="coca.html">Coca-Cola</a>
+                </li>
+                <li class="nav-item">
+                    <a id="fanta" class="nav-link" href="fanta.html">Fanta</a>
+                </li>
+                <li class="nav-item">
+                    <a id="orangina" class="nav-link" href="orangina.html">Orangina</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+
+    <!-- Contenu -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8" id="primaire">
+                <h6>Polarité des tweets dans le temps</h6>
+                <!--<img src="dataexemples/Exemple.PNG">-->
+				<figure class="highcharts-figure">
+				<div id="container"></div>
+				<p class="highcharts-description">
+				</p>
+				</figure>
+				
+            </div>
+            <div class="col-4">
+                <h6>Hashtags associés</h6>
+                <!-- <img src="dataexemples/nuagemots.png">-->
+				<figure class="highcharts-figure">
+				<div id="container2"></div>
+				<p class="highcharts-description">
+				</p>
+				</figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h6>Popularité moyenne des tweets selon la polarité</h6>
+                <div style="width: 100%; overflow: hidden;">
+                    <div id="likes" style="width: calc(50% - 3px); float: left;">
+					<!--<img src="dataexemples\likesmoyens.PNG">-->
+					<figure class="highcharts-figure">
+					<div id="container5"></div>
+					<p class="highcharts-description">
+					<img class="logos" src="images\like.png">
+					</p>
+					</figure>
+					</div>
+					
+                    <div id="retweets" style="margin-left: calc(50% + 3px);">
+					<!--<img src="dataexemples\likesmoyens.PNG">-->
+					<figure class="highcharts-figure">
+					<div id="container6"></div>
+					<p class="highcharts-description">
+					<img class="logos" src="images\retweet.png">
+					</p>
+					</figure>
+					</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <h6>Mots-clés associés<br />aux tweets positifs</h6>
+                <!--<img src="dataexemples/Exemplevert.PNG" style="width: 200px">-->
+				<figure class="highcharts-figure">
+				<div id="container3"></div>
+				<p class="highcharts-description">
+				</p>
+				</figure>
+            </div>
+            <div class="col-3">
+                <h6>Mots-clés associés<br />aux tweets négatifs</h6>
+                <!--<img src="dataexemples/Exemplerouge.PNG" style="width: 200px">-->
+				<figure class="highcharts-figure">
+				<div id="container4"></div>
+				<p class="highcharts-description">
+				</p>
+				</figure>
+            </div>
+        </div>
+        <div class="row emojisrow">
+            <div>
+                <h6>Emojis les plus populaires</h6>
+                <!--<img src="dataexemples/emojis.png" style="width: 100%;">-->
+				<figure class="highcharts-figure">
+				<div id="container7"></div>
+				<p class="highcharts-description">
+				</p>
+				</figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-nav">
+        <p>Tous droits réservés</p>
+        <p><a href="contact.html">Contactez-nous</a></p>
+        <p><a href="presentation.html">Le projet</a></p>
+    </div>
+
+
+    <!-- JS pour le CSS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function(event) {
+            function footer() {
+                var scroll = $(window).scrollTop();
+                if (scroll > 50) {
+                    $(".footer-nav").fadeIn("slow").addClass("show");
+                } else {
+                    $(".footer-nav").fadeOut("slow").removeClass("show");
+                }
+            }
+            footer();
+        });
+		
+    </script>
+	
+	
+	<!--SOURCE des graphiques et bibliotheque:  https://www.highcharts.com/demo/wordcloud -->
+	
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/pareto.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+	
+	<script>
+	
+	
+	var requestURL = 'DATA/json1.json';
+	var request = new XMLHttpRequest();
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
+	request.onload = function() {
+		var data = request.response;
+		var listeNbPositif=data['fanta'][0]['nbPositif'];
+		var listeNbNegatif=data['fanta'][0]['nbNegatif'];
+		/*
+		on parcour tous les valeurs positives et negatives. 
+		on recupere toutes les valeus pour le graphique une pas une et la moyenne pour chaque niveau. 
+		*/
+		var moyenne= [];
+		var listeNbNegatifSigne=[];
+		for (var i in listeNbNegatif){ //meme indicage pour les deux listes positif et neg donc une boucle suffit. 
+			//console.log(listeNbNegatif[i]);
+			//console.log(listeNbPositif[i]);
+			var moytemp=(listeNbPositif[i]+(-listeNbNegatif[i]))/2;
+			moyenne.push(moytemp);
+			var negtemp=-listeNbNegatif[i];
+			listeNbNegatifSigne.push(negtemp);
+				
+		}
+		
+//////////////////////////////////////////////////////////graphique 1/////////////////////////////////////////////////////////////
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'column',
+        backgroundColor: 'none',
+        height: 300,
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: data['fanta'][0]['date'],//ici mes dates en abscise
+		title:{text:'Date'}
+    },
+	yAxis: {
+		title:{text:'Nb de tweets'}
+    },	
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Tweets positifs',
+        data: listeNbPositif,
+		color: 'rgba(110,178,0,1)'
+    }, {
+        name: 'Tweets negatifs',
+        data: listeNbNegatifSigne,
+		color: 'rgba(214,74,0,1)'
+    },
+	{
+        name: 'Popularité des tweets en moyenne',
+        type: 'spline',
+		color: 'rgba(10,3,0,1)',
+        data: moyenne
+	}]
+});
+
+
+//////////////////////////////////////////////////////////graphique 2/////////////////////////////////////////////////////////////
+
+Highcharts.chart('container2', {
+    accessibility: {
+        screenReaderSection: {
+            beforeChartFormat: '<h5>{chartTitle}</h5>' +
+                '<div>{chartSubtitle}</div>' +
+                '<div>{chartLongdesc}</div>' +
+                '<div>{viewTableButton}</div>'
+        }
+    },
+    series: [{
+        type: 'wordcloud',
+        data: data['fanta'][0]['hastagAssocie'],
+        name: 'Occurrences'
+    }],
+    title: {
+        text: ''
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 300,
+    },
+    credits: {
+        enabled: false
+    }
+});
+
+
+//////////////////////////////////////////////////////////graphique 3/////////////////////////////////////////////////////////////
+
+
+	
+Highcharts.chart('container3', {
+    accessibility: {
+        screenReaderSection: {
+            beforeChartFormat: '<h5>{chartTitle}</h5>' +
+                '<div>{chartSubtitle}</div>' +
+                '<div>{chartLongdesc}</div>' +
+                '<div>{viewTableButton}</div>'
+        }
+    },
+    colors: ['#21ba3a', '#44e55f', '#1aed3d', '#7ad689', '#0d9b25',
+        '#6ace5a', '#4ae033', '#25d30a', '#36c982', '#78ba87'],
+    series: [{
+        type: 'wordcloud',
+        data: data['fanta'][0]['nameClefPos'],
+        name: 'Occurrences'
+    }],
+    title: {
+        text: ''
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 250
+    },
+    credits: {
+        enabled: false
+    }
+});
+
+
+//////////////////////////////////////////////////////////graphique 4/////////////////////////////////////////////////////////////
+
+	
+Highcharts.chart('container4', {
+    accessibility: {
+        screenReaderSection: {
+            beforeChartFormat: '<h5>{chartTitle}</h5>' +
+                '<div>{chartSubtitle}</div>' +
+                '<div>{chartLongdesc}</div>' +
+                '<div>{viewTableButton}</div>'
+        }
+    },
+    series: [{
+        type: 'wordcloud',
+        data: data['fanta'][0]['nameClefNeg'],
+        name: 'Occurrences'
+    }],
+    title: {
+        text: ''
+    },
+    colors: ['#e2583d', '#e83a17', '#ed765e', '#c16857', '#d13414',
+    '#e2583d', '#e83a17', '#ed765e', '#c16857', '#d13414'],
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    chart: {
+        backgroundColor: 'none',
+        height: 250
+    },
+    credits: {
+        enabled: false
+    }
+});
+
+
+//////////////////////////////////////////////////////////graphique 5/////////////////////////////////////////////////////////////
+
+
+Highcharts.chart('container5', {
+    chart: {
+        type: 'column',
+        backgroundColor: 'none',
+        height: 250,
+    },
+    title: {
+        text: ''
+    },
+	xAxis: {
+        categories: ['7 dernier jours']//ici mes dates en abscise
+    },
+	yAxis: {
+		title:{text:'Nb de likes'}
+    },	
+    credits: {
+        enabled: false
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    series: [{
+        name: 'Tweets positifs',
+        data: [data['fanta'][0]['nbLikePos']],
+		color: 'rgba(110,178,0,1)'
+    }, {
+        name: 'Tweets négatifs',
+        data: [data['fanta'][0]['nbLikeNeg']],
+		color: 'rgba(214,74,0,1)'
+    }]
+});
+
+//////////////////////////////////////////////////////////graphique 6/////////////////////////////////////////////////////////////
+
+Highcharts.chart('container6', {
+    chart: {
+        type: 'column',
+        backgroundColor: 'none',
+        height: 250,
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['7 dernier jours']//ici mes dates en abscise
+    },
+	yAxis: {
+		title:{text:'Nb de retweets'}
+    },	
+    credits: {
+        enabled: false
+    },
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    series: [{
+        name: 'Tweets positifs',
+        data: [data['fanta'][0]['nbRetweetPos']],
+		color: 'rgba(110,178,0,1)'
+    }, {
+        name: 'Tweets négatifs',
+        data: [data['fanta'][0]['nbRetweetNeg']],
+		color: 'rgba(214,74,0,1)'
+    }]
+});
+
+
+//////////////////////////////////////////////////////////graphique 7/////////////////////////////////////////////////////////////
+
+//gestion des emoji:
+//faire une liste des code et une liste des resultats. 
+var codeEmoji= [];
+var occurenceEmoji= [];
+var listeEmoji=data['fanta'][0]['emojis'];
+for (var i in listeEmoji){ 
+	//console.log(data['fanta'][0]['emojis'][i]['code']);
+	codeEmoji.push(data['fanta'][0]['emojis'][i]['code']);
+	occurenceEmoji.push(data['fanta'][0]['emojis'][i]['occurence']);	
+}
+		//console.log(listeEmoji);
+
+
+Highcharts.chart('container7', {
+    chart: {
+        type: 'column',
+        backgroundColor: 'none',
+        height: 300
+    },
+    title: {
+        text: '',
+        floating: true,
+    },
+    xAxis: {
+        categories:  codeEmoji
+    },
+    credits: {
+        enabled: false
+    },
+	yAxis: {
+		title:{text:'Occurences'}
+    },	
+    exporting : {
+        buttons: {
+            contextButton: {
+                enabled: false,
+            }
+        }
+    },
+    series: [{
+        name: "Nb d'occurences",
+        data: occurenceEmoji,
+        dataSorting: {enabled: true}
+    }]
+});
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+	</script>
+
+	
+</body>
+
+</html>
