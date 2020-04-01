@@ -1,12 +1,18 @@
-## Objectifs du projet Trendr
+## Le projet Trendr
 
-Ce projet a pour objectif de mettre à disposition une application web permettant à l'utilisateur de renseigner un Hashtag de son choix et lui retourner une analyse de la valence émotionnelle des tweets postés contenant ce hashtag. 
-Cette analyse pourra présenter la distribution de tweets positifs et négatifs dans le temps, l'impact de la polarité émotionnelle sur la popularité du tweet (nombre moyen de likes et retweets selon que le tweet soit positif ou négatif), ou encore les hashtags et mots clés les plus fréquemment associés (toujours selon la polarité émotionnelle des tweets).
+Trendr est un projet mené en 2020 par 5 étudiants en Master 1 MIASHS à l'Université Paul Valéry - Montpellier 3.
 
-Dans un premier temps, nous souhaitons proposer ces services pour un nombre limité de hashtags choisis par le groupe. Si le temps et les ressources à notre disposition le permettent, nous ouvrirons ce service à n'importe quel hashtag choisi par l'utilisateur.
+Il consiste à développer une application web permettant à une marque de monitorer sa popularité sur Twitter à travers une anaylse fine des tweets positifs et négatifs à son sujet. Trendr propose aussi de monitorer les marques concurrentes.
 
-L'intérêt de ce projet réside dans le travail de traitement et de normalisation des tweets nécessaires à l'analyse, ainsi que du caractère inédit de ce type de rapport.
-Cette application cible par exemple un journaliste intéressé par une analyse détaillée de l'opinion générale sur un sujet.
+Cette solution présente dans un premier temps la fréquence globale de tweets en fonction de leur polarité émotionnelle, à propos des marques monitées. Plus en détails, Trendr permet de suivre la distribution de tweets positifs et négatifs chaque jour de la dernière semaine écoulée, mais ausi l'impact de la polarité émotionnelle sur la popularité d'un tweet (nombre moyen de likes et retweets selon que le tweet soit positif ou négatif), ou encore les hashtags et mots clés les plus fréquemment associés aux mentions de la marque.
+
+## Liens pratiques
+
+[Le site web](https://gaellenovales.github.io/Trendr/Site/index.html)
+
+[Le diaporama de présentation](https://docs.google.com/presentation/d/1o9HG2lGVkurZNOJ1pyzyUFFb9WEu1f_7gaXPajIEPKc/edit?usp=sharing)
+
+[Nous contacter](https://gaellenovales.github.io/Trendr/Site/contact.html)
 
 _Exemple :_
-![Image](Exemple.PNG)
+![Image](Site/images/groslogo.png)
