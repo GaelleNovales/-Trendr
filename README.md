@@ -8,11 +8,11 @@ Cette solution présente dans un premier temps la fréquence globale de tweets e
 
 ## Liens pratiques
 
-[lien vers la demo] (http://dl.free.fr/sgnZmIsjF)
-
 [Le site web](https://gaellenovales.github.io/Trendr/Site/index.html)
 
 [Le diaporama de présentation](https://docs.google.com/presentation/d/1o9HG2lGVkurZNOJ1pyzyUFFb9WEu1f_7gaXPajIEPKc/edit?usp=sharing)
+
+[Demo video du site web](http://dl.free.fr/sgnZmIsjF)
 
 [Nous contacter](https://gaellenovales.github.io/Trendr/Site/contact.html)
 
