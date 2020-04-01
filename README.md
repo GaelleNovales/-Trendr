@@ -14,5 +14,5 @@ Cette solution présente dans un premier temps la fréquence globale de tweets e
 
 [Nous contacter](https://gaellenovales.github.io/Trendr/Site/contact.html)
 
-_Exemple :_
+
 ![Image](Site/images/groslogo.png)
